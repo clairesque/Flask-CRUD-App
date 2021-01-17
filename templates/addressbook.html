@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Claire's Beauty Blog</title>
+  <link rel="stylesheet" type=text/css href="..\static\styles\gueststyling.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:300" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Gentium+Basic&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+
+      <div class="center">
+          <p class="active"> claire's <span class="logo">
+              address book </span></p>
+        </div>
+        <div class="navbar">
+    
+            <a href="/" class="selected">about</a>
+            {% if session['logged in'] == True %}
+            <a href="account">account</a>
+            {% else %}
+            <a href="login">login</a>
+            {% endif %}
+            <a href="reviews">reviews</a>
+            <a href="addressbook">address book</a>
+            <a href="contact">contact us</a>
+    
+        </div>
+    
+  </header>
+ 
+
+    <div id="full-form">
+        {% block content %}
+      <form class="form" action="{{ url_for('gsign') }}" method="post">
+        
+        <p class="sign" align="center">Add a Record</p>
+        <dl>
+          
+       <dd> <input class="user" type="text"  placeholder="Name" name="name" style="text-align:center">
+        <dd><input class="user" type="text" style="text-align:center" placeholder="Phone" name="phone">
+       <dd><input class="user" type="text" style="text-align:center" placeholder="Address" name="address">
+       <dd> <input class="submit" style="text-align:center" type="submit" placeholder="Submit">
+        
+      </dl>
+        </form>
+        {% endblock %}
+    </div>
+
+           <div id="whole">
+          <table id="addressBook">
+                                 
+              <th>Name</th>
+              <th>Phone No</th> 
+              <th>Address</th>
+      
+      {% for entry in entries %}
+              <tr>
+                      <td> {{ entry[1]}} </td>
+                      <td> {{ entry[2]}} </td>
+                      <td> {{ entry[3]}} <a href="/delete?id={{entry[0]}}">Delete Entry</td>
+                   
+              </tr>
+              
+      {% endfor %}
+    
+</table>
+</div>
+
+</body>
+
+</html>

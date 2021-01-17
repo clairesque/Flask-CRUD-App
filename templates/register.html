@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Claire's Beauty Blog</title>
+  <link rel="stylesheet" type=text/css href="..\static\styles\login-styling.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:300" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Gentium+Basic&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+ 
+      <div class="center">
+          <p class="active"> claire's <span class="logo">
+              address book </span></p>
+        </div>
+        <div class="navbar">
+    
+            <a href="/" class="selected">about</a>
+            {% if session['logged in'] == True %}
+            <a href="account">account</a>
+            {% else %}
+            <a href="login">login</a>
+            {% endif %}
+            <a href="reviews">reviews</a>
+            <a href="addressbook">address book</a>
+            <a href="contact">contact us</a>
+    
+        </div>
+    
+  </header>
+
+
+  <div class="container">
+    <div class="welcome">
+      <div class="pinkbox">
+        <div class="signup">
+          <h1>register</h1>
+          <form autocomplete="off" method="POST" action="">
+            <input name="username" type="text" placeholder="username">
+            <input name="email" type="email" placeholder="email">
+            <input name="password" type="password" placeholder="password">
+            <input name="password" type="password" placeholder="confirm password">
+            <button type="submit" class="button submit">create account </button>
+            <p class="success"> {{msg}} </p>
+          </form>
+        </div>
+        <div class="signin nodisplay">
+          <h1>sign in</h1>
+          <form class="more-padding" autocomplete="off" method="POST" action="">
+            <input name="username" type="text" placeholder="username">
+            <input name="password" type="password" placeholder="password">
+
+
+            <button type="submit" class="button submit">login</button>
+          </form>
+        </div>
+      </div>
+      <div class="rightbox">
+        <h2 class="title"><span>CLAIRE'S</span>ADDRESS<br>BOOK</h2>
+        <img class="flower smaller" src="../static/images/lipstick.png" border="0">
+        <p class="account">have an account?</p>
+        <button class="button" id="signin"><a href="login">login</a></button>
+      </div>
+      <div class="leftbox">
+
+        <img class="flower" src="https://preview.ibb.co/jvu2Un/0057c1c1bab51a0.jpg" />
+        <p class="account">don't have an account?</p>
+        <button class="button" id="signup">sign up</button>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+
+</html>

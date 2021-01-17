@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Claire's Beauty Blog</title>
+  <link rel="stylesheet" type=text/css href="..\static\styles\stylesheet.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:300" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Gentium+Basic&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    
+      <div class="center">
+          <p class="active"> claire's <span class="logo">
+              address book </span></p>
+        </div>
+        <div class="navbar">
+    
+            <a href="/" class="selected">about</a>
+            {% if session['logged in'] == True %}
+            <a href="account">account</a>
+            {% else %}
+            <a href="login">login</a>
+            {% endif %}
+            <a href="reviews">reviews</a>
+            <a href="addressbook">address book</a>
+            <a href="contact">contact us</a>
+    
+        </div>
+    
+  </header>
+
+
+
+
+ <div class="container">
+  <div class="images">
+    <img id ="selfie" src="..\static\images\book.png"> 
+  </div>
+  
+  
+  <div class="product">
+    <p class="name">Address Book</p>
+    <h1 class="about">About Us</h1>
+    
+    <p class="desc">This website contains an address book that you can edit to add records or delete them. If you have any questions or suggestions for my website,
+       don't hesitate to contact me through the
+        <a href="#contact" style="text-decoration: none; color:black">contact page</a>. </strong></p> 
+   
+  </div>
+</div>   
+  
+  
+
+  
+
+</body>
+</html>
